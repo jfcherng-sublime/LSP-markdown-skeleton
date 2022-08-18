@@ -1,0 +1,28 @@
+{
+    "command": ["${node_bin}", "${server_path}", "--stdio"],
+    "schemes": ["file", "buffer", "res"],
+    "selector": "text.html.markdown",
+    // https://github.com/microsoft/vscode/tree/main/extensions/markdown-language-features/server#initialization-options
+    "initializationOptions": {
+        // Array file extensions that should be considered as Markdown. These should not include the leading dot.
+        "markdownFileExtensions": ["md", "mdown", "markdown"],
+    },
+    // https://github.com/microsoft/vscode/tree/main/extensions/markdown-language-features/server#settings
+    "settings": {
+        // Enable/disable path suggestions.
+        "markdown.suggest.paths.enabled": true,
+        // Enable/disable all validation.
+        "markdown.experimental.validate.enabled": true,
+        // enabled levels: 'ignore' | 'warning' | 'error'
+        // Enable/disable validation of reference links: [text][ref]
+        "markdown.experimental.validate.referenceLinks.enabled": "warning",
+        // Enable/disable validation of links to fragments in the current files: [text](#head)
+        "markdown.experimental.validate.fragmentLinks.enabled": "warning",
+        // Enable/disable validation of links to file in the workspace.
+        "markdown.experimental.validate.fileLinks.enabled": "warning",
+        // Enable/disable validation of links to headers in other Markdown files.
+        "markdown.experimental.validate.fileLinks.markdownFragmentLinks": "warning",
+        // Array of glob patterns for files that should not be validated.
+        "markdown.experimental.validate.ignoreLinks": [],
+    },
+}
